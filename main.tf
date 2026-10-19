@@ -1,16 +1,9 @@
 provider "aws" {
-  region = var.aws_region
+  region = "ap-south-2"
 }
 
-resource "aws_s3_bucket" "practice_bucket" {
-  bucket = "omkar-terraform-practice-${random_id.suffix.hex}"
-
-  tags = {
-    Name        = "Terraform Practice Bucket"
-    Environment = "Learning"
+resource "aws_instance" "practice_bucket" {
+  ami = "ami-04f617474d20eae29"
+  instance_type = "t3.micro"
   }
-}
 
-resource "random_id" "suffix" {
-  byte_length = 4
-}
