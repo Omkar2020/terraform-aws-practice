@@ -8,3 +8,6 @@ override.tf
 override.tf.json
 .terraformrc
 terraform.tfvars
+id_ed25519*
+*.pem
+*.key
